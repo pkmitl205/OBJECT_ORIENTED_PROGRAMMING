@@ -11,7 +11,7 @@ namespace _29082561_Ex1
         static void Main(string[] args)
         {
             // Ex9
-            Console.WriteLine("Three integers are {1}, {0} and {1}.", 3, 6); // Three integers are 6, 3 and 6.
+            Console.WriteLine("Three integers are {1}, {0} and {2}.", 3, 6); // Error
         }
     }
 }
