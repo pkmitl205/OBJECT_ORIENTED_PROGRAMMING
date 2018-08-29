@@ -10,8 +10,9 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex19
-            Console.WriteLine("{0 :P2}", 0.1221897); // 12.22%
+            // Ex10
+            Console.WriteLine("The value: {0}.", 500); // The value: 500.
+            Console.WriteLine("The value {0:C}.", 500); // The value: ฿500. 00.
         }
     }
 }
