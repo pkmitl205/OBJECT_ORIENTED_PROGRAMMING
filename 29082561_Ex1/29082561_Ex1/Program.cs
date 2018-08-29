@@ -10,10 +10,8 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex11
-            int myInt = 500;
-            Console.WriteLine("|{0, 10}|", myInt);  // |       500|
-            Console.WriteLine("|{0, -10}|", myInt); // |500       |
+            // Ex15
+            Console.WriteLine("{0 :F4}", 12.3456789); // 12.3457
         }
     }
 }
