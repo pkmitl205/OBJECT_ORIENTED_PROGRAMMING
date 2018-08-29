@@ -10,8 +10,8 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex14
-            Console.WriteLine("{0 :D4}", 12);
+            // Ex17
+            Console.WriteLine("{0 :x}", 180026);
         }
     }
 }
