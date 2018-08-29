@@ -10,8 +10,8 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex17
-            Console.WriteLine("{0 :x}", 180026);
+            // Ex8
+            Console.WriteLine("Three integers are {1}, {0} and {1}.", 3, 6);
         }
     }
 }
