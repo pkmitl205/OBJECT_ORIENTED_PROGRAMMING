@@ -10,8 +10,8 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex16
-            Console.WriteLine("{0 :G4}.", 12.3456789); // 12. 35.
+            // Ex20
+            Console.WriteLine("{0 :e4}.", 12.3456789); // 1.2346e+001.
         }
     }
 }
