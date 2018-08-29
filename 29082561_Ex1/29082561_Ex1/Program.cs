@@ -10,8 +10,10 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex20
-            Console.WriteLine("{0 :e4}.", 12.3456789); // 1.2346e+001.
+            // Ex11
+            int myInt = 500;
+            Console.WriteLine("|{0, 10}|", myInt);  // |       500|
+            Console.WriteLine("|{0, -10}|", myInt); // |500       |
         }
     }
 }
