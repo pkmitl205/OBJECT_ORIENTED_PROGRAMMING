@@ -10,8 +10,7 @@ namespace _29082561_Ex1
     {
         static void Main(string[] args)
         {
-            // Ex15
-            Console.WriteLine("{0 :F4}", 12.3456789); // 12.3457
+            int if;
         }
     }
 }
