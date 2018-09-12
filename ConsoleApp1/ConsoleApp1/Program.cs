@@ -1,9 +1,8 @@
 ﻿//Requirement
 //1. มี balance แยกระหว่าง debit, credit /
 //2. สามารถรวมยอดเพื่อเพิ่มวงเงินในการใช้จ่ายแต่ละครั้งได้ /
-//3. สามารถแสดงยอดคงเหลือสำหรับแต่ละ balance ได้
+//3. สามารถแสดงยอดคงเหลือสำหรับแต่ละ balance ได้/
 //4. ในกรณีใช้วงเงินเกินจากแต่ละ balance ที่มี ให้เลือกว่าจะใช้จาก balance ใดให้หมดวงเงินก่อน
-//ps.GITHUB repository
 
 using System;
 using System.Collections.Generic;
@@ -17,11 +16,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Account ac = new Account("pakon", 15000);
+            Account ac = new Account("pakon", 10000, 10000);
             ac.Display();
-            ac.Debit(300);
-            ac.Credit(3000);
-            ac.Debit(200);
+            ac.Buy(15000); //buy TV 15000 bath
             ac.Display();
         }
     }
@@ -29,32 +26,56 @@ namespace ConsoleApp1
     public class Account
     {
         private string accountName;
-        private int accountBalance;
-        public void Credit(int amount)
+        //private int accountBalance;
+        private int credit;
+        private int debit;
+
+        public void Credit(int credit)
         {
-            Console.WriteLine("Credit {0} bath", amount);
+            Console.WriteLine("Credit {0} bath", credit);
         }
-        public void Debit(int amount)
+
+        public void Debit(int debit)
         {
-            if (amount > accountBalance)
+            Console.WriteLine("Credit {0} bath", debit);
+        }
+        // Function Buy
+
+        public void Buy(int buy)
+        {
+            if(credit >= buy)
             {
-                Console.WriteLine("Sory, there is not  enough monney");
+                credit = credit - buy;
             }
             else
             {
-                accountBalance -= amount;
+                //debit = debit + (credit - buy);
+                //credit = 0;
+                Console.WriteLine("Please select a purchase method : [1] Credit,  [2] Debit");
+                int s = Convert.ToInt16(Console.ReadLine());
+                switch (s)
+                {
+                    case 1:
+                            debit = debit + (credit - buy);
+                            credit = 0;
+                            break;
+                    case 2: Console.WriteLine("You owe the bank {0}", debit);
+                            credit = credit + (debit - buy);
+                            debit = -debit;
+                            break;
+                }
             }
-            Console.WriteLine("Debit {0 , 10:C} bath", amount);
         }
+
         public void Display()
         {
-            Console.WriteLine("Name: {0}, Balance: {1 , 10:C}", accountName, accountBalance);
-
+            Console.WriteLine("Name: {0}, Balance: Credit = {1 , 10:C} , Debit = {2 , 10:C}", accountName, credit, debit);
         }
-        public Account(string accountName, int amount)
+        public Account(string accountName, int credit, int debit)
         {
             this.accountName = accountName;
-            this.accountBalance = amount;
+            this.credit = credit;
+            this.debit = debit;
         }
     }
 }
