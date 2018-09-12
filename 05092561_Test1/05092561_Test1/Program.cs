@@ -10,21 +10,23 @@ namespace _05092561_Test1
     {
         static void Main(string[] args)
         {
-            base_class base_class = new base_class();
-            base_class.report();
-
-            derived_class derived_class = new derived_class();
-            derived_class.report();
+            person p1 = new person();
+            p1.name = "prayuth";
+            student s1 = new student();
+            s1.name = "Pracha";
+            s1.major = "comp";
+            Console.WriteLine("p1.name = {0}", p1.name);
+            Console.WriteLine("s1.name = {0}, s1.major = {1}", s1.name, s1.major);
+            s1.name = "Prasong";
+            //person ps1 = (person)s1;
         }
     }
-    class base_class
+    class person // base
     {
-        public int a = 10;
-        public void report() { Console.WriteLine("base class {0}", a); }
+        public string name;
     }
-    class derived_class : base_class
+    class student : person // derived
     {
-        new public int a = 20;
-        new public void report() { Console.WriteLine("derived class {0}", a); }
+        public string major;
     }
 }
