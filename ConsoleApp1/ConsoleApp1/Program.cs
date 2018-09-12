@@ -1,4 +1,11 @@
-﻿using System;
+﻿//Requirement
+//1. มี balance แยกระหว่าง debit, credit /
+//2. สามารถรวมยอดเพื่อเพิ่มวงเงินในการใช้จ่ายแต่ละครั้งได้ /
+//3. สามารถแสดงยอดคงเหลือสำหรับแต่ละ balance ได้
+//4. ในกรณีใช้วงเงินเกินจากแต่ละ balance ที่มี ให้เลือกว่าจะใช้จาก balance ใดให้หมดวงเงินก่อน
+//ps.GITHUB repository
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +17,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Account ac = new Account("name", 15000);
+            Account ac = new Account("pakon", 15000);
             ac.Display();
             ac.Debit(300);
             ac.Credit(3000);
@@ -44,7 +51,7 @@ namespace ConsoleApp1
             Console.WriteLine("Name: {0}, Balance: {1 , 10:C}", accountName, accountBalance);
 
         }
-        public Account(string accoutntName, int amount)
+        public Account(string accountName, int amount)
         {
             this.accountName = accountName;
             this.accountBalance = amount;
